@@ -39,13 +39,12 @@ class HomeFragment : Fragment() {
             adapter.setData(it)
         })
 
-
 //        binding.btnaddUser.setOnClickListener {
 //            findNavController().navigate(R.id.action_homeFragment_to_addUserFragment)
 //        }
-        binding.btndeleteALl.setOnClickListener {
-            deleteAll()
-        }
+//        binding.btndeleteALl.setOnClickListener {
+//            deleteAll()
+//        }
         return binding.root
     }
 

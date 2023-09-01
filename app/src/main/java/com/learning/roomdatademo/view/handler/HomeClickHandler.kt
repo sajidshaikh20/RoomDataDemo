@@ -14,4 +14,11 @@ class HomeClickHandler(private val context: HomeFragment) {
             }
         }
     }
+    fun deleterAllCLick(){
+        context.let {
+            context.apply {
+                deleteAll()
+            }
+        }
+    }
 }
