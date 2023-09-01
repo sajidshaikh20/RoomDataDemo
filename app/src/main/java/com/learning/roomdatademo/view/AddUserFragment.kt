@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.learning.roomdatademo.R
 import com.learning.roomdatademo.databinding.FragmentAddUserBinding
 import com.learning.roomdatademo.model.User
+import com.learning.roomdatademo.view.handler.AddUserClickHandler
 import com.learning.roomdatademo.viewmodel.UserViewModel
 
 class AddUserFragment : Fragment() {
@@ -29,15 +30,18 @@ class AddUserFragment : Fragment() {
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        binding.mbtnAdd.setOnClickListener {
-            instetDataToDatabase()
 
-
-        }
         return binding.root
     }
 
-    private fun instetDataToDatabase() {
+    @Override
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //handler context pass
+        binding.handler = AddUserClickHandler(this)
+    }
+
+     fun instetDataToDatabase() {
 
         val firstname = binding.edtName.text.toString()
         val lastName = binding.edtLastName.text.toString()

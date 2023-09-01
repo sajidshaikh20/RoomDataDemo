@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.learning.roomdatademo.R
 import com.learning.roomdatademo.databinding.FragmentHomeBinding
 import com.learning.roomdatademo.view.adapter.ListAdapter
+import com.learning.roomdatademo.view.handler.HomeClickHandler
 import com.learning.roomdatademo.viewmodel.UserViewModel
 
 
@@ -37,18 +38,26 @@ class HomeFragment : Fragment() {
         userViewModel.readAllData.observe(viewLifecycleOwner, Observer {
             adapter.setData(it)
         })
-        binding.btnaddUser.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_addUserFragment)
-        }
+
+
+//        binding.btnaddUser.setOnClickListener {
+//            findNavController().navigate(R.id.action_homeFragment_to_addUserFragment)
+//        }
         binding.btndeleteALl.setOnClickListener {
             deleteAll()
-            Toast.makeText(requireContext(), "Delete All", Toast.LENGTH_SHORT).show()
         }
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.handler = HomeClickHandler(this)
+    }
+
     fun deleteAll() {
         userViewModel.deleteAllUser()
+        Toast.makeText(requireContext(), "Delete All", Toast.LENGTH_SHORT).show()
+
     }
 
 }
