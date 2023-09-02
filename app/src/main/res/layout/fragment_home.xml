@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="handler"
             type="com.learning.roomdatademo.view.handler.HomeClickHandler" />

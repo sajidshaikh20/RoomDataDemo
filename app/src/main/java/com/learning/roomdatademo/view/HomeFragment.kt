@@ -38,13 +38,6 @@ class HomeFragment : Fragment() {
         userViewModel.readAllData.observe(viewLifecycleOwner, Observer {
             adapter.setData(it)
         })
-
-//        binding.btnaddUser.setOnClickListener {
-//            findNavController().navigate(R.id.action_homeFragment_to_addUserFragment)
-//        }
-//        binding.btndeleteALl.setOnClickListener {
-//            deleteAll()
-//        }
         return binding.root
     }
 
@@ -56,7 +49,6 @@ class HomeFragment : Fragment() {
     fun deleteAll() {
         userViewModel.deleteAllUser()
         Toast.makeText(requireContext(), "Delete All", Toast.LENGTH_SHORT).show()
-
     }
 
 }

@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("kotlin-kapt")
-   // id("androidx.navigation.safeargs")
+    // id("androidx.navigation.safeargs")
     id("androidx.navigation.safeargs")
     id("kotlin-parcelize")
 }
@@ -93,9 +93,8 @@ dependencies {
 
     // To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:2.5.2")
-        // To use Kotlin Symbol Processing (KSP)
-   // ksp("androidx.room:room-compiler:$room_version")
-
+    // To use Kotlin Symbol Processing (KSP)
+    // ksp("androidx.room:room-compiler:$room_version")
 
 
 }
